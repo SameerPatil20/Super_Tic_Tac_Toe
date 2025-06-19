@@ -89,7 +89,7 @@ int main()
                 {
                     if((block_allowed==-1 || block_allowed==tile_number/9) && BigBoard[tile_number/9]==0)
                     {
-                        Poss.setPosition({40+int(j/3)*190+50*(j%3),40+int(i/3)*190+50*(i%3)});
+                        Poss.setPosition({float(40+(j/3)*190+50*(j%3)),float(40+(i/3)*190+50*(i%3))});
                         window.draw(Poss);
                     }
                     continue;
@@ -104,7 +104,7 @@ int main()
                     text.setString("O");
                     text.setFillColor(sf::Color::Red);
                 }
-                text.setPosition({int(j/3)*190+45+50*(j%3),int(i/3)*190+35+50*(i%3)});
+                text.setPosition({float((j/3)*190+45+50*(j%3)),float((i/3)*190+35+50*(i%3))});
                 window.draw(text);
             }
         }
@@ -115,22 +115,22 @@ int main()
                 if(BigBoard[i*3+j]<1)continue;
                 if(endLine[i*3+j]<4)
                 {
-                    Hline.setPosition({j*190+35,i*190+60+(endLine[i*3+j]-1)*50});
+                    Hline.setPosition({float(j*190+35),float(i*190+60+(endLine[i*3+j]-1)*50)});
                     window.draw(Hline);
                 }
                 else if(endLine[i*3+j]<7)
                 {
-                    Vline.setPosition({j*190+60+(endLine[i*3+j]-4)*50,i*190+35});
+                    Vline.setPosition({float(j*190+60+(endLine[i*3+j]-4)*50),float(i*190+35)});
                     window.draw(Vline);
                 }
                 else if(endLine[i*3+j]==7)
                 {
-                    Pline.setPosition({j*190+35,i*190+35});
+                    Pline.setPosition({float(j*190+35),float(i*190+35)});
                     window.draw(Pline);
                 }
                 else if(endLine[i*3+j]==8)
                 {
-                    Nline.setPosition({j*190+185,i*190+35});
+                    Nline.setPosition({float(j*190+185),float(i*190+35)});
                     window.draw(Nline);
                 }
                 if(BigBoard[i*3+j]==1)
@@ -143,7 +143,7 @@ int main()
                     bigtext.setString("O");
                     bigtext.setFillColor(sf::Color::Red);
                 }
-                bigtext.setPosition({j*190+60,i*190+15});
+                bigtext.setPosition({float(j*190+60),float(i*190+15)});
                 window.draw(bigtext);
 
             }
